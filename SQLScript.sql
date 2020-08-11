@@ -56,3 +56,4 @@ GO
 
 SELECT * FROM Project.EmployeesFromDepartment(1);
 
+SELECT COUNT(*) FROM Project.Employee WHERE DeptID = 1;
