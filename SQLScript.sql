@@ -45,3 +45,14 @@ GO
 INSERT INTO Project.EmpDetails VALUES
 (1, 40,000.00, '123 Fake Street', '', 'Somewhere', 'TX', 'USA'), (2, 63,000.00, '456 Wall Street', 'NULL', 'Fake', 'TX', 'USA'), (3, 10,000.00, '789 Trainer Street', 'NULL', 'Nowhere', 'MI', 'USA');
 GO
+
+CREATE FUNCTION Project.EmployeesFromDepartment(@empID INT)
+RETURNS TABLE
+AS
+RETURN
+  SELECT *
+  FROM Project.Employee WHERE ID = @empID;
+GO
+
+SELECT * FROM Project.EmployeesFromDepartment(1);
+
